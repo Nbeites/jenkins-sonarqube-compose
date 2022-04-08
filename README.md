@@ -1,5 +1,8 @@
 # set up jenkins+sonarqube+postgres on host machine
 
+    The host machine must have at least 4gb RAM, and for integration with
+    sonarqube the recommended is 8gb RAM.
+
     Change max virtual memory for host machine : 
         - sudo sysctl -w vm.max_map_count=262144
 
@@ -18,6 +21,8 @@
         - docker build -t jenkins-docker .
         - docker run -p 8080:8080 -p 50000:50000 -v /var/jenkins_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock --name jenkins -d jenkins-docker
         - docker exec -it jenkins bash (-it is to open a terminal)
+
+        (To see directory system : docker exec -t -i mycontainer /bin/bash)
 
         Note : to be functional, docker ps command must run correctly, if it does, means that the docker ps
         is communicating with socket present in /var/run/docker.sock in the host machine
@@ -56,7 +61,6 @@
 
         Install docker compose:
         - sudo apt-get docker-compose
-
 
         - wget https://raw.githubusercontent.com/Nbeites/jenkins-sonarqube-compose/main/docker-compose.yml
 
