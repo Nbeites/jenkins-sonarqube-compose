@@ -37,7 +37,7 @@
             EXAMPLE : host machine -> docker:x:998:root ; container -> docker:x:998:jenkins (THIS WORKS), just run the DockerFile that is 
             in this project in jenkins-docker
 
-            - ADDAPT THE DOCKERFILE DEPOENDING ON GROUP ID DOCKER OF HOST MACHINE
+            - ADAPT THE DOCKERFILE DEPENDING ON GROUP ID DOCKER OF HOST MACHINE
 
             If does not work, try executing the following command outside container : sudo systemctl restart docker
             And try again...
